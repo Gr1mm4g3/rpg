@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dn85my2emfvu8"]
 
 [ext_resource type="Script" uid="uid://bf1no6x4fdyds" path="res://Scripts/Player/player.gd" id="1_uvnfx"]
+[ext_resource type="Script" uid="uid://hfs6evbguhxx" path="res://Scripts/Player/State_machine.gd" id="2_a3d8c"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tdsf6"]
 
@@ -17,3 +18,7 @@ mesh = SubResource("CapsuleMesh_tdsf6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1586101533]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("ConvexPolygonShape3D_tugb3")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1613028838]
+script = ExtResource("2_a3d8c")
+metadata/_custom_type_script = "uid://hfs6evbguhxx"
