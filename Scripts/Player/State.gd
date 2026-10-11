@@ -1,11 +1,18 @@
 extends Node
 class_name State
 
+@export var animation_name: String = ""
+@export var can_move: bool = true
+
 var state_machine: Node
 var player: CharacterBody3D
+var animation_tree: AnimationTree
+var animation_player: AnimationNodeStateMachinePlayback
+var input_controller
 
 func enter() -> void:
-	pass
+	if animation_name != "" and animation_player:
+		animation_player.travel(animation_name)
 	
 func exit() -> void:
 	pass
