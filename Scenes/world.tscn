@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://0dmf2fnxv1df"]
+
+[ext_resource type="PackedScene" uid="uid://dn85my2emfvu8" path="res://Scenes/Player/player.tscn" id="1_a02cp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tdsf6"]
+size = Vector3(15, 1, 15)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yp4wr"]
+points = PackedVector3Array(-7.619047, -0.61904764, -7.619048, 7.619047, 0.57142854, 7.619048, 7.619047, -0.61904764, 7.619048, 7.619047, 0.57142854, -7.619048, -7.619047, 0.57142854, 7.619048, -7.619047, -0.61904764, 7.619048, 7.619047, -0.61904764, -7.619048, -7.619047, 0.57142854, -7.619048)
+
+[node name="World" type="Node3D" unique_id=652890314]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1232176830]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=848747742]
+mesh = SubResource("BoxMesh_tdsf6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=2135987948]
+shape = SubResource("ConvexPolygonShape3D_yp4wr")
+
+[node name="Player" parent="." unique_id=150761857 instance=ExtResource("1_a02cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.93305254, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=48808775]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 3, 5)
